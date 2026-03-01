@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Santosh Engineering Works | Precision CNC & Fabrication</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+        /* === EXTRA STYLES ADDED === */
+    
+    /* Smooth Scroll */
+    html { scroll-behavior: smooth; }
+
+    /* Enhanced Header */
+    header {
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    }
+    
+    /* Better Navigation */
+    nav {
+        background: linear-gradient(90deg, #0f172a 0%, #1e293b 100%);
+    }
+    nav a {
+        padding: 8px 15px;
+        border-radius: 5px;
+    }
+    nav a:hover {
+        background: rgba(255,255,255,0.1);
+    }
+
+    /* Enhanced Hero */
+    .hero {
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(37, 99, 235, 0.4) 100%), 
+                    url('https://images.unsplash.com/photo-1565043589221-1a6a89c84559?q=80&w=2070&auto=format&fit=crop');
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    .hero-content h1 {
+        animation: fadeInUp 1s ease;
+    }
+    .hero-content p {
+        animation: fadeInUp 1s ease 0.3s both;
+    }
+    .hero-content .btn {
+        animation: fadeInUp 1s ease 0.6s both;
+        box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
+    }
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Enhanced Section Titles */
+    .section-title {
+        font-weight: 800;
+        letter-spacing: -1px;
+    }
+    .section-title::before {
+        content: '⚡ ';
+    }
+
+    /* Better About Section */
+    .about-content {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    }
+    .gst-box {
+        background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        color: white;
+        padding: 12px 25px;
+        border-radius: 50px;
+    }
+
+    /* Enhanced Stats */
+    .about-stats {
+        background: linear-gradient(135deg, #0f172a, #1e3a8a);
+        border-radius: 20px;
+    }
+    .stat-box h3 {
+        font-weight: 800;
+        text-shadow: 0 2px 10px rgba(37, 99, 235, 0.5);
+    }
+
+    /* Enhanced Cards */
+    .card {
+        border-radius: 20px;
+        border: 1px solid #e2e8f0;
+        position: relative;
+        overflow: hidden;
+    }
+    .card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(90deg, #2563eb, #06b6d4);
+        transform: scaleX(0);
+        transition: transform 0.3s;
+    }
+    .card:hover::before {
+        transform: scaleX(1);
+    }
+    .card:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+    }
+    .icon {
+        font-size: 50px;
+        background: linear-gradient(135deg, #2563eb, #06b6d4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    /* Enhanced Gallery */
+    .gallery-item {
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    .gallery-item::after {
+        content: 'View';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-weight: 600;
+        opacity: 0;
+        transition: 0.3s;
+    }
+    .gallery-item:hover::after {
+        opacity: 1;
+    }
+    .gallery-item:hover img {
+        filter: brightness(0.7);
+    }
+
+    /* Enhanced Process Steps */
+    .process-step {
+        background: white;
+        border-radius: 15px;
+        transition: 0.3s;
+        border: 2px solid transparent;
+    }
+    .process-step:hover {
+        border-color: #2563eb;
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+    .process-step h3 {
+        color: #2563eb;
+        font-weight: 700;
+    }
+
+    /* Enhanced Contact Section */
+    .contact-info-box {
+        border-radius: 20px;
+        border: 2px solid #e2e8f0;
+    }
+    .contact-icon {
+        background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        color: white;
+    }
+    .contact-item a:hover {
+        color: #2563eb !important;
+    }
+
+    /* Enhanced Footer */
+    footer {
+        background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+        padding: 50px 20px;
+    }
+    footer p {
+        font-size: 14px;
+        opacity: 0.8;
+    }
+
+    /* Enhanced Floating Buttons */
+    .whatsapp, .call {
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        border: 3px solid transparent;
+    }
+    .whatsapp:hover, .call:hover {
+        transform: scale(1.15) translateY(-5px);
+        border-color: white;
+    }
+    .whatsapp { animation: pulse 2s infinite; }
+    @keyframes pulse {
+        0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+        50% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    }
+
+    /* Enhanced Enquiry Button */
+    .enquiry-btn-fixed {
+        background: linear-gradient(135deg, #2563eb, #7c3aed);
+        box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+        animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+    .enquiry-btn-fixed:hover {
+        background: white;
+        color: #2563eb;
+    }
+
+    /* Enhanced Popup */
+    .popup {
+        box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+        border: 1px solid #e2e8f0;
+    }
+    .popup input:focus, .popup textarea:focus {
+        border-color: #2563eb;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+    .popup button:hover {
+        background: linear-gradient(135deg, #1d4ed8, #7c3aed);
+        transform: translateY(-2px);
+    }
+    
+    /* Scrollbar Styling */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #2563eb;
+        border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #1d4ed8;
+    }
+
+    /* Subtle Animations */
+    .card, .process-step, .stat-box, .gallery-item {
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+        /* === EXTRA STYLES ADDED === */
+    
+    /* Smooth Scroll */
+    html { scroll-behavior: smooth; }
+
+    /* Enhanced Header */
+    header {
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    }
+    
+    /* Better Navigation */
+    nav {
+        background: linear-gradient(90deg, #0f172a 0%, #1e293b 100%);
+    }
+    nav a {
+        padding: 8px 15px;
+        border-radius: 5px;
+    }
+    nav a:hover {
+        background: rgba(255,255,255,0.1);
+    }
+
+    /* Enhanced Hero */
+    .hero {
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(37, 99, 235, 0.4) 100%), 
+                    url('https://images.unsplash.com/photo-1565043589221-1a6a89c84559?q=80&w=2070&auto=format&fit=crop');
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    .hero-content h1 {
+        animation: fadeInUp 1s ease;
+    }
+    .hero-content p {
+        animation: fadeInUp 1s ease 0.3s both;
+    }
+    .hero-content .btn {
+        animation: fadeInUp 1s ease 0.6s both;
+        box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
+    }
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Enhanced Section Titles */
+    .section-title {
+        font-weight: 800;
+        letter-spacing: -1px;
+    }
+    .section-title::before {
+        content: '⚡ ';
+    }
+
+    /* Better About Section */
+    .about-content {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    }
+    .gst-box {
+        background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        color: white;
+        padding: 12px 25px;
+        border-radius: 50px;
+    }
+
+    /* Enhanced Stats */
+    .about-stats {
+        background: linear-gradient(135deg, #0f172a, #1e3a8a);
+        border-radius: 20px;
+    }
+    .stat-box h3 {
+        font-weight: 800;
+        text-shadow: 0 2px 10px rgba(37, 99, 235, 0.5);
+    }
+
+    /* Enhanced Cards */
+    .card {
+        border-radius: 20px;
+        border: 1px solid #e2e8f0;
+        position: relative;
+        overflow: hidden;
+    }
+    .card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(90deg, #2563eb, #06b6d4);
+        transform: scaleX(0);
+        transition: transform 0.3s;
+    }
+    .card:hover::before {
+        transform: scaleX(1);
+    }
+    .card:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+    }
+    .icon {
+        font-size: 50px;
+        background: linear-gradient(135deg, #2563eb, #06b6d4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    /* Enhanced Gallery */
+    .gallery-item {
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    .gallery-item::after {
+        content: 'View';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-weight: 600;
+        opacity: 0;
+        transition: 0.3s;
+    }
+    .gallery-item:hover::after {
+        opacity: 1;
+    }
+    .gallery-item:hover img {
+        filter: brightness(0.7);
+    }
+
+    /* Enhanced Process Steps */
+    .process-step {
+        background: white;
+        border-radius: 15px;
+        transition: 0.3s;
+        border: 2px solid transparent;
+    }
+    .process-step:hover {
+        border-color: #2563eb;
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+    .process-step h3 {
+        color: #2563eb;
+        font-weight: 700;
+    }
+
+    /* Enhanced Contact Section */
+    .contact-info-box {
+        border-radius: 20px;
+        border: 2px solid #e2e8f0;
+    }
+    .contact-icon {
+        background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        color: white;
+    }
+    .contact-item a:hover {
+        color: #2563eb !important;
+    }
+
+    /* Enhanced Footer */
+    footer {
+        background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+        padding: 50px 20px;
+    }
+    footer p {
+        font-size: 14px;
+        opacity: 0.8;
+    }
+
+    /* Enhanced Floating Buttons */
+    .whatsapp, .call {
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        border: 3px solid transparent;
+    }
+    .whatsapp:hover, .call:hover {
+        transform: scale(1.15) translateY(-5px);
+        border-color: white;
+    }
+    .whatsapp { animation: pulse 2s infinite; }
+    @keyframes pulse {
+        0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+        50% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    }
+
+    /* Enhanced Enquiry Button */
+    .enquiry-btn-fixed {
+        background: linear-gradient(135deg, #2563eb, #7c3aed);
+        box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+        animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+    .enquiry-btn-fixed:hover {
+        background: white;
+        color: #2563eb;
+    }
+
+    /* Enhanced Popup */
+    .popup {
+        box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+        border: 1px solid #e2e8f0;
+    }
+    .popup input:focus, .popup textarea:focus {
+        border-color: #2563eb;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+    .popup button:hover {
+        background: linear-gradient(135deg, #1d4ed8, #7c3aed);
+        transform: translateY(-2px);
+    }
+    
+    /* Scrollbar Styling */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #2563eb;
+        border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #1d4ed8;
+    }
+
+    /* Subtle Animations */
+    .card, .process-step, .stat-box, .gallery-item {
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    :root {
+        --primary: #0f172a; /* Dark Navy */
+        --accent: #2563eb;  /* Bright Blue */
+        --secondary: #334155; /* Slate */
+        --light: #f8fafc;
+        --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+    
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background-color: var(--light);
+        color: #333;
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
+
+    /* Loader */
+    #loader {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: var(--primary);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease;
+    }
+    .spinner {
+        width: 50px;
+        height: 50px;
+        border: 5px solid #ffffff30;
+        border-top: 5px solid var(--accent);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 15px;
+    }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+    /* Header */
+    header {
+        background: var(--white);
+        padding: 15px 0;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        position: relative;
+        z-index: 100;
+    }
+    .header-content {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+    .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    .logo-img {
+        height: 60px;
+        width: auto;
+        border-radius: 5px;
+        object-fit: contain;
+    }
+    .company-info h1 {
+        margin: 0;
+        font-size: 24px;
+        color: var(--primary);
+        font-weight: 700;
+    }
+    .company-info p {
+        margin: 0;
+        font-size: 14px;
+        color: var(--secondary);
+    }
+
+    /* Navigation */
+    nav {
+        background: var(--primary);
+        padding: 15px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    nav ul {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    nav a {
+        color: #cbd5e1;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 15px;
+        transition: color 0.3s;
+    }
+    nav a:hover { color: var(--white); }
+
+    /* Hero Section */
+    .hero {
+    height: 85vh;
+    background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.6)), 
+                url('https://wallpaperaccess.com/full/11762342.jpg') center/cover no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
+    .hero-content h1 {
+        font-size: 3.5rem;
+        margin-bottom: 15px;
+        line-height: 1.2;
+    }
+    .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        color: #cbd5e1;
+    }
+    .btn {
+        background: var(--accent);
+        color: #fff;
+        padding: 14px 30px;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: transform 0.3s, background 0.3s;
+        display: inline-block;
+    }
+    .btn:hover {
+        transform: translateY(-3px);
+        background: #1d4ed8;
+    }
+
+    /* Sections General */
+    .container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 80px 20px;
+    }
+    h2.section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 50px;
+        position: relative;
+    }
+    h2.section-title::after {
+        content: '';
+        width: 60px;
+        height: 4px;
+        background: var(--accent);
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2px;
+    }
+
+    /* About */
+    .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+    }
+    .about-text p { font-size: 1.1rem; color: #475569; margin-bottom: 20px; }
+    .gst-box {
+        background: #eff6ff;
+        padding: 15px;
+        border-radius: 8px;
+        border-left: 4px solid var(--accent);
+        color: var(--primary);
+        font-weight: 600;
+        display: inline-block;
+    }
+    .about-stats {
+        background: var(--primary);
+        padding: 30px;
+        border-radius: 15px;
+        color: white;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        text-align: center;
+    }
+    .stat-box h3 { font-size: 2.5rem; margin: 0; color: var(--accent); }
+    .stat-box p { margin: 0; font-size: 0.9rem; opacity: 0.8; }
+
+    /* Services */
+        /* Service Images - Medium Size */
+    .service-img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+    .card {
+        background: var(--white);
+        padding: 40px 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        transition: 0.4s;
+        text-align: center;
+        border-bottom: 4px solid transparent;
+    }
+    .card:hover {
+    transform: translateY(-10px);
+    border-bottom: 4px solid var(--accent);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+    .icon {
+        font-size: 40px;
+        margin-bottom: 20px;
+        display: block;
+    }
+    .card h3 { color: var(--primary); margin-bottom: 15px; }
+    .card p { color: #64748b; font-size: 0.95rem; }
+
+    /* Gallery */
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+    .gallery-item {
+        height: 250px;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+    }
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+    }
+    .gallery-item:hover img { transform: scale(1.1); }
+
+    /* Process */
+    .process-step {
+        background: #e2e8f0;
+        padding: 30px;
+        border-radius: 10px;
+        text-align: center;
+        position: relative;
+    }
+    .process-step h3 { color: var(--primary); margin-top: 0;}
+
+    /* Contact */
+    .contact-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+    .contact-info-box {
+        background: var(--white);
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+    .contact-item {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .contact-icon {
+        background: #eff6ff;
+        color: var(--accent);
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-size: 18px;
+    }
+    iframe { border-radius: 10px; width: 100%; height: 100%; min-height: 350px; border: 0; }
+
+    /* Footer */
+    footer {
+        background: var(--primary);
+        color: #94a3b8;
+        text-align: center;
+        padding: 40px 20px;
+    }
+    footer p { margin: 0; }
+
+    /* Floating Buttons */
+    .whatsapp, .call {
+        position: fixed;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        font-size: 24px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        z-index: 900;
+        transition: transform 0.3s;
+    }
+    .whatsapp { bottom: 20px; background: #25D366; }
+    .call { bottom: 85px; background: var(--accent); }
+    .whatsapp:hover, .call:hover { transform: scale(1.1); }
+
+    /* Enquiry Popup */
+    .enquiry-btn-fixed {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        background: var(--primary);
+        color: white;
+        padding: 12px 25px;
+        border-radius: 50px;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        font-weight: 600;
+        z-index: 900;
+        border: 2px solid transparent;
+        transition: 0.3s;
+    }
+    .enquiry-btn-fixed:hover { background: white; color: var(--primary); border-color: var(--primary); }
+
+    .popup-overlay {
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0,0,0,0.6);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+        backdrop-filter: blur(3px);
+    }
+    .popup {
+        background: white;
+        padding: 35px;
+        border-radius: 15px;
+        width: 90%;
+        max-width: 400px;
+        position: relative;
+        animation: slideUp 0.4s ease;
+    }
+    @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    
+    .popup h3 { margin-top: 0; color: var(--primary); }
+    .popup input, .popup textarea {
+        width: 100%;
+        margin-bottom: 15px;
+        padding: 12px;
+        border: 1px solid #cbd5e1;
+        border-radius: 6px;
+        font-family: inherit;
+    }
+    .popup button {
+        width: 100%;
+        padding: 12px;
+        background: var(--accent);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    .close-popup {
+        position: absolute;
+        top: 15px; right: 15px;
+        cursor: pointer;
+        font-size: 20px;
+        color: #94a3b8;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .hero-content h1 { font-size: 2.5rem; }
+        .about-content, .contact-container { grid-template-columns: 1fr; }
+        .header-content { flex-direction: column; text-align: center; gap: 10px; }
+        .whatsapp, .call { width: 45px; height: 45px; font-size: 18px; }
+    }
+</style>
+</head>
+<body>
+
+<!-- Loader -->
+<div id="loader">
+    <div class="spinner"></div>
+    <span>Loading Santosh Engineering Works...</span>
+</div>
+
+<!-- Header -->
+<header>
+    <div class="header-content">
+        <div class="logo-container">
+            <!-- Replace with your Logo URL -->
+            <img src="https://cdn-icons-png.flaticon.com/512/4257/4257127.png" class="logo-img" alt="Logo">
+            <div class="company-info">
+                <h1>Santosh Engineering Works</h1>
+                <p>Precision CNC | Milling | Turning | Fabrication</p>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Navigation -->
+<nav>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Machines</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Engineering Excellence & Precision Manufacturing</h1>
+        <p>Serving Industry Since 2012</p>
+        <button class="btn" onclick="openPopup()">Request Quote</button>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="container" id="about">
+    <h2 class="section-title">About Company</h2>
+    <div class="about-content">
+        <div class="about-text">
+            <p>Santosh Engineering Works has been delivering high-quality machining, CNC, milling, turning, and fabrication solutions since 2012 with precision and timely delivery. We are committed to quality and customer satisfaction.</p>
+            <div class="gst-box">GST Number: 36AHEPA1197R2ZY</div> <!-- Updated with dummy GST -->
+        </div>
+        <div class="about-stats">
+            <div class="stat-box">
+                <h3 data-target="13">0</h3>
+                <p>Years Experience</p>
+            </div>
+            <div class="stat-box">
+                <h3 data-target="500">0</h3>
+                <p>Projects Completed</p>
+            </div>
+            <div class="stat-box">
+                <h3 data-target="100">0</h3>
+                <p>Happy Clients</p>
+            </div>
+            <div class="stat-box">
+                <h3 data-target="99">0</h3>
+                <p>Quality Delivery %</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="container" id="services">
+    <h2 class="section-title">Our Services</h2>
+    <div class="grid">
+        <div class="card">
+            <img src="https://www.3erp.com/wp-content/uploads/2023/05/2-min.jpg" alt="CNC Machining" class="service-img">
+            <h3>CNC Machining</h3>
+            <p>High-precision computer numerical control machining for complex parts with tight tolerances.</p>
+        </div>
+        <div class="card">
+            <img src="https://wallpaperaccess.com/full/11762283.png" alt="Milling Works" class="service-img">
+            <h3>Milling Works</h3>
+            <p>Vertical and horizontal milling services for various industrial components.</p>
+        </div>
+        <div class="card">
+            <img src="https://opm-mfg.com/wp-content/uploads/cnc-turning-service-scaled.jpeg" alt="Turning Works" class="service-img">
+            <h3>Turning Works</h3>
+            <p>Precision lathe operations for cylindrical parts, shafts, and rollers.</p>
+        </div>
+        <div class="card">
+            <img src="https://morfabrication.com/wp-content/uploads/2022/09/home-1100x700.jpg" alt="Fabrication" class="service-img">
+            <h3>Fabrication</h3>
+            <p>Custom metal fabrication and structural assembly for industrial needs.</p>
+        </div>
+        <div class="card">
+            <img src="https://shalindesigns.com/wp-content/uploads/2025/01/CAD-Design-Hacks_-From-Beginner-to-Pro.webp" alt="AutoCAD Designing" class="service-img">
+            <h3>AutoCAD Designing & Engineering</h3>
+            <p>Professional 2D & 3D CAD designing, drafting, and engineering services for manufacturing.</p>
+        </div>
+    </div>
+</section>
+<!-- Industries Section -->
+<section class="container" id="industries">
+    <h2 class="section-title">Industries We Serve</h2>
+    <p class="section-subtitle">Delivering precision solutions across multiple sectors</p>
+    <div class="grid">
+        <div class="card">
+            <img src="https://perspective.ca/wp-content/uploads/2018/02/Advanced-Manufacturing-and-Aerospace-in-Canada.jpg" alt="Automotive" class="service-img">
+            <h3>Automotive Industries</h3>
+            <p>Precision components for vehicle manufacturing, parts, and assembly lines.</p>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=400" alt="Heavy Engineering" class="service-img">
+            <h3>Heavy Engineering & Machinery</h3>
+            <p>Custom parts for industrial machinery, heavy equipment, and manufacturing plants.</p>
+        </div>
+        <div class="card">
+            <img src="https://ovitas.com/wp-content/uploads/2024/05/AdobeStock_548541329-scaled.jpeg" alt="Pharmaceutical" class="service-img">
+            <h3>Pharmaceutical Industry</h3>
+            <p>Stainless steel fittings, containers, and precision parts for medical equipment.</p>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1517976487492-5750f3195933?q=80&w=400" alt="Aerospace" class="service-img">
+            <h3>Aerospace Industry</h3>
+            <p>High-precision components for aircraft and defense equipment.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Section -->
+<section class="container" id="gallery">
+    <h2 class="section-title">Our Machines</h2>
+    <div class="gallery-grid">
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format&fit=crop" alt="CNC Machine">
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1567789884554-0b844b5986c1?q=80&w=2070&auto=format&fit=crop" alt="Milling Machine">
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=2070&auto=format&fit=crop" alt="Turning Machine">
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1535952642077-c77874e28633?q=80&w=2070&auto=format&fit=crop" alt="Fabrication">
+        </div>
+    </div>
+</section>
+
+<!-- Process Section -->
+<section class="container" id="process">
+    <h2 class="section-title">Our Working Process</h2>
+    <div class="grid">
+        <div class="process-step">
+            <h3>1. Requirement Discussion</h3>
+            <p>We understand your exact needs and specifications.</p>
+        </div>
+        <div class="process-step">
+            <h3>2. Design & Planning</h3>
+            <p>Our team creates detailed plans and CAD designs.</p>
+        </div>
+        <div class="process-step">
+            <h3>3. Production</h3>
+            <p>Precision manufacturing using advanced machinery.</p>
+        </div>
+        <div class="process-step">
+            <h3>4. Quality Inspection</h3>
+            <p>Rigorous testing to ensure top-notch quality.</p>
+        </div>
+        <div class="process-step">
+            <h3>5. Delivery</h3>
+            <p>Safe and timely delivery to your doorstep.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="container" id="contact">
+    <h2 class="section-title">Contact Us</h2>
+    <div class="contact-container">
+        <div class="contact-info-box">
+            <div class="contact-item">
+                <div class="contact-icon">📍</div>
+                <div>
+                    <strong>Address:</strong><br>
+                    7-18-180/4, Near M.G Work Shop,<br>
+                    Plot No. 64/A, Goutham Nagar,<br>
+                    Balanagar, Secunderabad - 500011
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">📞</div>
+                <div>
+                    <strong>Phone:</strong><br>
+                    <a href="tel:9949115293" style="color: inherit; text-decoration: none;">+91 9949115239</a>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">✉️</div>
+                <div>
+                    <strong>Email:</strong><br>
+                    <a href="mailto:santoshworks2012@gmail.com" style="color: inherit; text-decoration: none;">santoshworks2012@gmail.com</a>
+                </div>
+            </div>
+        </div>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.98847144236!2d78.45695807547496!3d17.46026588343942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9100533e3a73%3A0xf1172f43c404504d!2sSantosh%20Engineering%20works!5e0!3m2!1sen!2sin!4v1772362488121!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2026 Santosh Engineering Works | Established 2012 | Precision CNC & Fabrication</p>
+</footer>
+
+<!-- Floating Buttons -->
+<a class="whatsapp" href="https://wa.me/919949115239?text=Hello%20Santosh%20Engineering%20Works,%20I%20need%20a%20quotation" target="_blank">💬</a>
+<a class="call" href="tel:9949115239">📞</a>
+<div class="enquiry-btn-fixed" onclick="openPopup()">Quick Enquiry</div>
+
+<!-- Enquiry Popup -->
+<div class="popup-overlay" id="popupOverlay">
+    <div class="popup">
+        <span class="close-popup" onclick="closePopup()">&times;</span>
+        <h3>Request Quote</h3>
+        <input type="text" id="name" placeholder="Your Name">
+        <input type="tel" id="phone" placeholder="Phone Number">
+        <textarea id="req" rows="4" placeholder="Your Requirement"></textarea>
+        <button onclick="sendWhatsApp()">Send Enquiry</button>
+    </div>
+</div>
+
+<script>
+    // Loader
+    window.onload = function() {
+        setTimeout(function() {
+            document.getElementById('loader').style.opacity = '0';
+            setTimeout(function() {
+                document.getElementById('loader').style.display = 'none';
+            }, 500);
+        }, 1500);
+    };
+
+    // Stats Counter Animation
+    window.addEventListener("load", () => {
+
+const stats = document.querySelectorAll('.stat-box h3');
+
+stats.forEach(stat => {
+
+    const target = +stat.getAttribute('data-target');
+    let count = 0;
+
+    const update = () => {
+        count += target / 80;
+
+        if(count < target){
+            stat.innerText = Math.ceil(count);
+            requestAnimationFrame(update);
+        } else {
+            stat.innerText = target + "+";
+        }
+    };
+
+    update();
+});
+
+});
+    stats.forEach(stat => {
+        const target = +stat.getAttribute('data-target');
+        const duration = 2000; // 2 seconds
+        const increment = target / (duration / 16); // 60fps
+        
+        let current = 0;
+        const updateCount = () => {
+            current += increment;
+            if (current < target) {
+                stat.innerText = Math.ceil(current);
+                requestAnimationFrame(updateCount);
+            } else {
+                stat.innerText = target + '+';
+            }
+        };
+        updateCount();
+    });
+
+    // Popup Functions
+    function openPopup() {
+        document.getElementById('popupOverlay').style.display = 'flex';
+    }
+
+    function closePopup() {
+        document.getElementById('popupOverlay').style.display = 'none';
+    }
+
+    // Close popup when clicking outside
+    document.getElementById('popupOverlay').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closePopup();
+        }
+    });
+
+    // Send WhatsApp Message
+    function sendWhatsApp() {
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const req = document.getElementById('req').value;
+
+        if(name === '' || phone === '' || req === '') {
+            alert('Please fill in all fields');
+            return;
+        }
+
+        const message = `Hello Santosh Engineering Works,%0A%0AName: ${name}%0APhone: ${phone}%0ARequirement: ${req}`;
+        const whatsappUrl = `https://wa.me/917894561235?text=${message}`;
+        
+        window.open(whatsappUrl, '_blank');
+        closePopup();
+    }
+        // === SCROLL ANIMATION SCRIPT ===
+    
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top < (window.innerHeight || document.documentElement.clientHeight) - 100
+        );
+    }
+    
+    function handleScrollAnimation() {
+        const animatedElements = document.querySelectorAll('.scroll-animate, .scroll-animate-left, .scroll-animate-right, .scroll-animate-zoom');
+        
+        animatedElements.forEach((element, index) => {
+            if (isInViewport(element)) {
+                element.classList.add('visible');
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', handleScrollAnimation);
+    handleScrollAnimation();
+</script>
+
+</body>
+</html>
