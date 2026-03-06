@@ -433,6 +433,69 @@
         margin-bottom: 40px;
         max-width: 600px;
     }
+    /* Hero Buttons Wrapper */
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    pointer-events: auto;
+    z-index: 100;
+}
+
+/* Primary Button */
+.btn-primary {
+    background: var(--accent);
+    color: white;
+    border: 2px solid var(--accent);
+    pointer-events: auto;
+    z-index: 100;
+    position: relative;
+}
+
+.btn-primary:hover {
+    background: transparent;
+    color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3);
+}
+
+/* Outline Button */
+.btn-outline {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    pointer-events: auto;
+    z-index: 100;
+    position: relative;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: var(--primary);
+    transform: translateY(-3px);
+}
+
+/* Button Icon Spacing */
+.btn i {
+    margin-right: 8px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .hero-buttons {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        text-align: center;
+        max-width: 300px;
+    }
+}
 
     /* ================= ABOUT ================= */
     .about-grid {
@@ -950,6 +1013,7 @@ footer {
             <i class="fas fa-bars"></i>
         </div>
     </div>
+    
 </header>
 
 <!-- HERO -->
@@ -958,8 +1022,14 @@ footer {
         <div class="hero-content">
             <h1>Precision Engineering & <br><span>CNC Solutions</span></h1>
             <p>Industry leaders in CNC machining, sheet metal fabrication, and custom industrial manufacturing. Quality precision delivered on time.</p>
-            <a href="#contact" class="btn">Get a Quote</a>
-            <a href="#services" class="btn btn-outline">Our Services</a>
+           <div class="hero-buttons">
+    <a href="#contact" class="btn btn-primary">
+        <i class="fas fa-file-alt"></i> Get a Quote
+    </a>
+    <a href="#services" class="btn btn-outline">
+        <i class="fas fa-cogs"></i> Our Services
+    </a>
+</div>
         </div>
     </div>
 </section>
