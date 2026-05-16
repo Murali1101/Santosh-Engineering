@@ -1,0 +1,130 @@
+/* CUSTOM CSS FOR SANTOSH ENGINEERING PREMIUM WEBSITE */
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+/* Custom Grid Background */
+.industrial-grid {
+    background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(circle at center, black, transparent 80%);
+    -webkit-mask-image: radial-gradient(circle at center, black, transparent 80%);
+}
+
+/* Lenis Scroll Smooth Base Styles */
+html.lenis {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+    pointer-events: none;
+}
+
+/* Magnetic Button Glow Effects */
+.magnetic-btn::before {
+    content: '';
+    position: absolute;
+    top: var(--y, 50%);
+    left: var(--x, 50%);
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.4) 0%, transparent 70%);
+    transition: width 0.4s ease, height 0.4s ease;
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.magnetic-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Form Input Animations */
+input:not(:placeholder-shown)+label,
+textarea:not(:placeholder-shown)+label {
+    top: -1rem;
+    font-size: 0.75rem;
+    color: #06B6D4;
+}
+
+/* Smooth selection color */
+::selection {
+    background: #F97316;
+    color: #fff;
+}
+
+::-moz-selection {
+    background: #F97316;
+    color: #fff;
+}
+
+/* Horizontal Scroll Styles */
+.industries-scroll-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    display: block;
+    scroll-snap-type: none;
+    touch-action: pan-x;
+    padding: 0 1.5rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.industries-scroll-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.industries-scroll-wrapper > div {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+}
+
+.industry-card {
+    scroll-snap-align: center;
+}
+
+
+.industry-card {
+    position: relative;
+    flex-shrink: 0;
+    min-width: 320px;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
