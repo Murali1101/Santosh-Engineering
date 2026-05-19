@@ -5,6 +5,11 @@
     display: none;
 }
 
+/* Ensure counters don't wrap their trailing symbols on small screens */
+.counter {
+    white-space: nowrap;
+}
+
 /* Hide scrollbar for IE, Edge and Firefox */
 .no-scrollbar {
     -ms-overflow-style: none;
