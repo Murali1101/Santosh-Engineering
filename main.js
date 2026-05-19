@@ -113,6 +113,41 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // --- MOBILE MENU TOGGLE ---
+    const mobileToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileToggle && mobileMenu) {
+        mobileToggle.addEventListener('click', () => {
+            const expanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+            mobileToggle.setAttribute('aria-expanded', String(!expanded));
+
+            if (!expanded) {
+                // open
+                mobileMenu.style.display = 'block';
+                gsap.killTweensOf(mobileMenu);
+                gsap.fromTo(mobileMenu, { maxHeight: 0, opacity: 0 }, { maxHeight: mobileMenu.scrollHeight, opacity: 1, duration: 0.35, ease: 'power2.out' });
+                const icon = mobileToggle.querySelector('i');
+                if (icon) { icon.setAttribute('data-lucide', 'x'); lucide.createIcons(); }
+            } else {
+                // close
+                gsap.killTweensOf(mobileMenu);
+                gsap.to(mobileMenu, { maxHeight: 0, opacity: 0, duration: 0.25, ease: 'power2.in', onComplete: () => { mobileMenu.style.display = ''; } });
+                const icon = mobileToggle.querySelector('i');
+                if (icon) { icon.setAttribute('data-lucide', 'menu'); lucide.createIcons(); }
+            }
+        });
+
+        // Close menu when a link is clicked
+        mobileMenu.querySelectorAll('a[href^="#"]').forEach((a) => {
+            a.addEventListener('click', () => {
+                mobileToggle.setAttribute('aria-expanded', 'false');
+                gsap.to(mobileMenu, { maxHeight: 0, opacity: 0, duration: 0.25, ease: 'power2.in', onComplete: () => { mobileMenu.style.display = ''; } });
+                const icon = mobileToggle.querySelector('i');
+                if (icon) { icon.setAttribute('data-lucide', 'menu'); lucide.createIcons(); }
+            });
+        });
+    }
+
     // --- INDUSTRIES AUTO SCROLL ---
     const industriesScrollWrapper = document.querySelector('.industries-scroll-wrapper');
     if (industriesScrollWrapper) {
@@ -239,10 +274,11 @@ window.addEventListener('DOMContentLoaded', () => {
     const counters = document.querySelectorAll('.counter');
     counters.forEach((counter) => {
         const target = parseInt(counter.getAttribute('data-target'));
+        const counterStart = window.innerWidth < 768 ? "top 95%" : "top 90%";
 
         ScrollTrigger.create({
             trigger: counter,
-            start: "top 90%",
+            start: counterStart,
             onEnter: () => {
                 let current = 0;
                 const duration = 1200; // ms
