@@ -119,21 +119,29 @@
             </div>
 
             <!-- Mobile Menu Toggle -->
-            <button id="mobile-menu-toggle" aria-controls="mobile-menu" aria-expanded="false" class="md:hidden text-white p-2">
+            <button id="mobile-menu-toggle" aria-controls="mobile-menu" aria-expanded="false"
+                class="md:hidden text-white p-2">
                 <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
         </div>
     </header>
 
-    <div id="mobile-menu" class="mobile-menu fixed inset-x-0 top-full z-40 bg-deep-navy border-t border-white/10 shadow-2xl md:hidden overflow-hidden max-h-0 opacity-0 transition-all duration-300">
+    <div id="mobile-menu"
+        class="mobile-menu fixed inset-x-0 top-full z-40 bg-deep-navy border-t border-white/10 shadow-2xl md:hidden overflow-hidden max-h-0 opacity-0 transition-all duration-300">
         <div class="px-6 py-5">
             <nav class="flex flex-col gap-4">
-                <a href="#about" class="font-tech text-sm text-metallic-silver uppercase tracking-widest hover:text-white">About</a>
-                <a href="#products" class="font-tech text-sm text-metallic-silver uppercase tracking-widest hover:text-white">Products</a>
-                <a href="#process" class="font-tech text-sm text-metallic-silver uppercase tracking-widest hover:text-white">Process</a>
-                <a href="#services" class="font-tech text-sm text-metallic-silver uppercase tracking-widest hover:text-white">Services</a>
+                <a href="#about"
+                    class="font-tech text-sm text-metallic-silver uppercase tracking-widest hover:text-white">About</a>
+                <a href="#products"
+                    class="font-tech text-sm text-metallic-silver uppercase tracking-widest hover:text-white">Products</a>
+                <a href="#process"
+                    class="font-tech text-sm text-metallic-silver uppercase tracking-widest hover:text-white">Process</a>
+                <a href="#services"
+                    class="font-tech text-sm text-metallic-silver uppercase tracking-widest hover:text-white">Services</a>
             </nav>
-            <a href="#contact" class="mt-5 inline-flex items-center justify-center w-full rounded-xl border border-engineering-steel/30 bg-dark-surface/80 px-5 py-3 text-sm font-tech font-bold uppercase tracking-widest text-white hover:bg-engineering-orange hover:text-white transition-colors">Get Quote</a>
+            <a href="#contact"
+                class="mt-5 inline-flex items-center justify-center w-full rounded-xl border border-engineering-steel/30 bg-dark-surface/80 px-5 py-3 text-sm font-tech font-bold uppercase tracking-widest text-white hover:bg-engineering-orange hover:text-white transition-colors">Get
+                Quote</a>
         </div>
     </div>
 
@@ -230,7 +238,21 @@
             <span class="font-tech text-[10px] tracking-[0.3em] text-metallic-silver uppercase">Scroll</span>
             <div class="w-[1px] h-16 bg-gradient-to-b from-industrial-cyan to-transparent"></div>
         </div>
-    </section>
+            <!-- Mobile Hero Stats (visible on small screens) -->
+            <div class="lg:hidden container max-w-3xl mx-auto px-6 mt-8">
+                <div class="flex items-center justify-center gap-4">
+                    <div class="bg-dark-surface border border-white/10 p-4 rounded-lg text-center w-40">
+                        <div class="font-tech text-sm text-metallic-silver">Precision Level</div>
+                        <div class="font-heading text-xl font-black text-white mt-1">±0.01mm</div>
+                    </div>
+                    <div class="bg-dark-surface border border-white/10 p-4 rounded-lg text-center w-40">
+                        <div class="font-tech text-sm text-metallic-silver">Certification</div>
+                        <div class="font-heading text-xl font-black text-white mt-1">ISO 9001</div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
 
     <!-- ABOUT SECTION -->
     <section id="about" class="py-32 relative z-10 bg-dark-surface">
@@ -279,7 +301,8 @@
 
                     <p class="font-body text-lg text-metallic-silver mb-8 leading-relaxed gsap-fade-right delay-200">
                         We are a growth-focused engineering partner for manufacturers who need reliable, high-precision
-                        industrial components delivered on time. From rapid prototyping to full production runs, we blend
+                        industrial components delivered on time. From rapid prototyping to full production runs, we
+                        blend
                         advanced CNC machining, tight-tolerance fabrication, and hands-on OEM support to turn complex
                         designs into rugged, ready-to-install products.
                     </p>
@@ -423,8 +446,7 @@
                             Machined</span>
                     </div>
                 </div>
-
-              <!-- Product 3 -->
+                <!-- Product 3 -->
                 <div
                     class="product-card group relative bg-dark-surface border border-white/5 rounded-2xl overflow-hidden min-h-[300px]">
                     <div class="absolute inset-0 bg-gradient-to-t from-deep-navy to-transparent z-10"></div>
@@ -455,7 +477,7 @@
                     </div>
                 </div>
 
-                <!-- Product 5 -->
+                <!-- Product 4 -->
                 <div
                     class="product-card group relative bg-dark-surface border border-white/5 rounded-2xl overflow-hidden min-h-[300px]">
                     <div class="absolute inset-0 bg-gradient-to-t from-deep-navy to-transparent z-10"></div>
@@ -471,7 +493,7 @@
                     </div>
                 </div>
 
-                <!-- Product 6 (CTA Card) -->
+                <!-- Product 5 (CTA Card) -->
                 <div
                     class="relative bg-gradient-to-br from-engineering-orange to-red-600 rounded-2xl p-8 flex flex-col justify-between min-h-[300px] overflow-hidden group cursor-pointer">
                     <div
@@ -494,7 +516,7 @@
         </div>
     </section>
 
-     <!-- HORIZONTAL PROCESS TIMELINE -->
+    <!-- HORIZONTAL PROCESS TIMELINE -->
     <section id="process" class="py-32 bg-deep-navy overflow-hidden">
         <div class="container max-w-7xl mx-auto px-6 mb-20">
             <div class="text-center max-w-3xl mx-auto gsap-fade-up">
@@ -582,7 +604,7 @@
             <div class="grid md:grid-cols-3 gap-6">
 
                 <!-- Service Card -->
-                 <div
+                  <div
                     class="service-card group relative bg-deep-navy border border-white/5 p-8 rounded-xl overflow-hidden gsap-fade-up">
                     <div
                         class="absolute inset-0 bg-gradient-to-br from-industrial-cyan/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -708,11 +730,13 @@
             <div class="text-center max-w-3xl mx-auto gsap-fade-up">
                 <div class="flex items-center gap-4 mb-6 justify-center">
                     <div class="w-12 h-[1px] bg-engineering-orange"></div>
-                    <span class="font-tech text-sm tracking-[0.2em] text-engineering-orange uppercase">Our Expertise</span>
+                    <span class="font-tech text-sm tracking-[0.2em] text-engineering-orange uppercase">Our
+                        Expertise</span>
                     <div class="w-12 h-[1px] bg-engineering-orange"></div>
                 </div>
                 <h2 class="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Industries We Serve</h2>
-                <p class="font-body text-lg text-metallic-silver max-w-2xl">Delivering precision-engineered solutions across diverse industrial sectors with proven expertise and reliability.</p>
+                <p class="font-body text-lg text-metallic-silver max-w-2xl">Delivering precision-engineered solutions
+                    across diverse industrial sectors with proven expertise and reliability.</p>
             </div>
         </div>
 
@@ -720,113 +744,171 @@
         <div class="industries-scroll-wrapper relative">
             <div class="px-6 flex gap-6 snap-x snap-mandatory">
                 <!-- Industry 1: Automotive -->
-                <div class="industry-card flex-shrink-0 w-80 bg-dark-surface border border-white/10 p-8 rounded-2xl group hover:border-engineering-orange transition-colors duration-300 snap-center gsap-fade-up">
-                    <div class="absolute inset-0 bg-gradient-to-br from-engineering-orange/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                <div
+                    class="industry-card flex-shrink-0 w-80 bg-dark-surface border border-white/10 p-8 rounded-2xl group hover:border-engineering-orange transition-colors duration-300 snap-center gsap-fade-up">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-engineering-orange/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl">
+                    </div>
                     <div class="relative z-10">
-                        <i data-lucide="car" class="w-12 h-12 text-engineering-orange mb-6 group-hover:scale-110 transition-transform"></i>
+                        <i data-lucide="car"
+                            class="w-12 h-12 text-engineering-orange mb-6 group-hover:scale-110 transition-transform"></i>
                         <h3 class="font-heading text-2xl font-bold text-white mb-4">Automotive</h3>
-                        <p class="font-body text-sm text-metallic-silver mb-6">Engine components, transmission parts, suspension systems, and precision shafts for OEM manufacturers.</p>
+                        <p class="font-body text-sm text-metallic-silver mb-6">Engine components, transmission parts,
+                            suspension systems, and precision shafts for OEM manufacturers.</p>
                         <div class="flex gap-2 flex-wrap">
-                            <span class="font-tech text-xs bg-white/5 px-3 py-1 rounded-full text-industrial-cyan">Engine Parts</span>
-                            <span class="font-tech text-xs bg-white/5 px-3 py-1 rounded-full text-industrial-cyan">Transmission</span>
+                            <span
+                                class="font-tech text-xs bg-white/5 px-3 py-1 rounded-full text-industrial-cyan">Engine
+                                Parts</span>
+                            <span
+                                class="font-tech text-xs bg-white/5 px-3 py-1 rounded-full text-industrial-cyan">Transmission</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Industry 2: Aerospace -->
-                <div class="industry-card flex-shrink-0 w-80 bg-dark-surface border border-white/10 p-8 rounded-2xl group hover:border-industrial-cyan transition-colors duration-300 snap-center gsap-fade-up delay-100">
-                    <div class="absolute inset-0 bg-gradient-to-br from-industrial-cyan/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                <div
+                    class="industry-card flex-shrink-0 w-80 bg-dark-surface border border-white/10 p-8 rounded-2xl group hover:border-industrial-cyan transition-colors duration-300 snap-center gsap-fade-up delay-100">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-industrial-cyan/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl">
+                    </div>
                     <div class="relative z-10">
-                        <i data-lucide="rocket" class="w-12 h-12 text-industrial-cyan mb-6 group-hover:scale-110 transition-transform"></i>
+                        <i data-lucide="rocket"
+                            class="w-12 h-12 text-industrial-cyan mb-6 group-hover:scale-110 transition-transform"></i>
                         <h3 class="font-heading text-2xl font-bold text-white mb-4">Aerospace</h3>
-                        <p class="font-body text-sm text-metallic-silver mb-6">High-precision aerospace components with tight tolerances, advanced materials, and rigorous quality standards.</p>
+                        <p class="font-body text-sm text-metallic-silver mb-6">High-precision aerospace components with
+                            tight tolerances, advanced materials, and rigorous quality standards.</p>
                         <div class="flex gap-2 flex-wrap">
-                            <span class="font-tech text-xs bg-white/5 px-3 py-1 rounded-full text-industrial-cyan">High Precision</span>
-                            <span class="font-tech text-xs bg-white/5 px-3 py-1 rounded-full text-industrial-cyan">Advanced Materials</span>
+                            <span class="font-tech text-xs bg-white/5 px-3 py-1 rounded-full text-industrial-cyan">High
+                                Precision</span>
+                            <span
+                                class="font-tech text-xs bg-white/5 px-3 py-1 rounded-full text-industrial-cyan">Advanced
+                                Materials</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Industry 3: Heavy Machinery -->
-                <div class="industry-card flex-shrink-0 w-80 bg-dark-surface border border-white/10 p-8 rounded-2xl group hover:border-engineering-orange transition-colors duration-300 snap-center gsap-fade-up">
-                    <div class="absolute inset-0 bg-gradient-to-br from-engineering-orange/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                <div
+                    class="industry-card flex-shrink-0 w-80 bg-dark-surface border border-white/10 p-8 rounded-2xl group hover:border-engineering-orange transition-colors duration-300 snap-center gsap-fade-up">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-engineering-orange/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl">
+                    </div>
                     <div class="relative z-10">
-                        <i data-lucide="zap" class="w-12 h-12 text-engineering-orange mb-6 group-hover:scale-110 transition-transform"></i>
+                        <i data-lucide="zap"
+                            class="w-12 h-12 text-engineering-orange mb-6 group-hover:scale-110 transition-transform"></i>
                         <h3 class="font-heading text-2xl font-bold text-white mb-4">Heavy Machinery</h3>
-                        <p class="font-body text-sm text-metallic-silver mb-6">Durable components for construction equipment, mining machinery, and industrial equipment with extreme durability.</p>
+                        <p class="font-body text-sm text-metallic-silver mb-6">Durable components for construction
+                            equipment, mining machinery, and industrial equipment with extreme durability.</p>
                         <div class="flex gap-2 flex-wrap">
-                            <span class="font-tech text-xs bg-white/5 px-3 py-1 rounded-full text-industrial-cyan">Construction</span>
-                            <span class="font-tech text-xs bg-white/5 px-3 py-1 rounded-full text-industrial-cyan">Mining</span>
+                            <span
+                                class="font-tech text-xs bg-white/5 px-3 py-1 rounded-full text-industrial-cyan">Construction</span>
+                            <span
+                                class="font-tech text-xs bg-white/5 px-3 py-1 rounded-full text-industrial-cyan">Mining</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Industry 4: Electrical -->
-                <div class="industry-card flex-shrink-0 w-80 bg-dark-surface border border-white/10 p-8 rounded-2xl group hover:border-industrial-cyan transition-colors duration-300 snap-center gsap-fade-up delay-100">
-                    <div class="absolute inset-0 bg-gradient-to-br from-industrial-cyan/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                <div
+                    class="industry-card flex-shrink-0 w-80 bg-dark-surface border border-white/10 p-8 rounded-2xl group hover:border-industrial-cyan transition-colors duration-300 snap-center gsap-fade-up delay-100">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-industrial-cyan/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl">
+                    </div>
                     <div class="relative z-10">
-                        <i data-lucide="power" class="w-12 h-12 text-industrial-cyan mb-6 group-hover:scale-110 transition-transform"></i>
+                        <i data-lucide="power"
+                            class="w-12 h-12 text-industrial-cyan mb-6 group-hover:scale-110 transition-transform"></i>
                         <h3 class="font-heading text-2xl font-bold text-white mb-4">Electrical</h3>
-                        <p class="font-body text-sm text-metallic-silver mb-6">Motor housings, rotor shafts, electrical connectors, and precision electrical equipment components.</p>
+                        <p class="font-body text-sm text-metallic-silver mb-6">Motor housings, rotor shafts, electrical
+                            connectors, and precision electrical equipment components.</p>
                         <div class="flex gap-2 flex-wrap">
-                            <span class="font-tech text-xs bg-white/5 px-3 py-1 rounded-full text-industrial-cyan">Motors</span>
-                            <span class="font-tech text-xs bg-white/5 px-3 py-1 rounded-full text-industrial-cyan">Generators</span>
+                            <span
+                                class="font-tech text-xs bg-white/5 px-3 py-1 rounded-full text-industrial-cyan">Motors</span>
+                            <span
+                                class="font-tech text-xs bg-white/5 px-3 py-1 rounded-full text-industrial-cyan">Generators</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Industry 5: Hydraulics -->
-                <div class="industry-card flex-shrink-0 w-80 bg-dark-surface border border-white/10 p-8 rounded-2xl group hover:border-engineering-orange transition-colors duration-300 snap-center gsap-fade-up">
-                    <div class="absolute inset-0 bg-gradient-to-br from-engineering-orange/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                <div
+                    class="industry-card flex-shrink-0 w-80 bg-dark-surface border border-white/10 p-8 rounded-2xl group hover:border-engineering-orange transition-colors duration-300 snap-center gsap-fade-up">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-engineering-orange/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl">
+                    </div>
                     <div class="relative z-10">
-                        <i data-lucide="droplets" class="w-12 h-12 text-engineering-orange mb-6 group-hover:scale-110 transition-transform"></i>
+                        <i data-lucide="droplets"
+                            class="w-12 h-12 text-engineering-orange mb-6 group-hover:scale-110 transition-transform"></i>
                         <h3 class="font-heading text-2xl font-bold text-white mb-4">Hydraulics</h3>
-                        <p class="font-body text-sm text-metallic-silver mb-6">Cylinder rods, pump components, valve bodies, and manifolds for hydraulic systems operating under high pressure.</p>
+                        <p class="font-body text-sm text-metallic-silver mb-6">Cylinder rods, pump components, valve
+                            bodies, and manifolds for hydraulic systems operating under high pressure.</p>
                         <div class="flex gap-2 flex-wrap">
-                            <span class="font-tech text-xs bg-white/5 px-3 py-1 rounded-full text-industrial-cyan">Cylinders</span>
-                            <span class="font-tech text-xs bg-white/5 px-3 py-1 rounded-full text-industrial-cyan">Pumps</span>
+                            <span
+                                class="font-tech text-xs bg-white/5 px-3 py-1 rounded-full text-industrial-cyan">Cylinders</span>
+                            <span
+                                class="font-tech text-xs bg-white/5 px-3 py-1 rounded-full text-industrial-cyan">Pumps</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Industry 6: Automation -->
-                <div class="industry-card flex-shrink-0 w-80 bg-dark-surface border border-white/10 p-8 rounded-2xl group hover:border-industrial-cyan transition-colors duration-300 snap-center gsap-fade-up delay-100">
-                    <div class="absolute inset-0 bg-gradient-to-br from-industrial-cyan/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                <div
+                    class="industry-card flex-shrink-0 w-80 bg-dark-surface border border-white/10 p-8 rounded-2xl group hover:border-industrial-cyan transition-colors duration-300 snap-center gsap-fade-up delay-100">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-industrial-cyan/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl">
+                    </div>
                     <div class="relative z-10">
-                        <i data-lucide="cpu" class="w-12 h-12 text-industrial-cyan mb-6 group-hover:scale-110 transition-transform"></i>
+                        <i data-lucide="cpu"
+                            class="w-12 h-12 text-industrial-cyan mb-6 group-hover:scale-110 transition-transform"></i>
                         <h3 class="font-heading text-2xl font-bold text-white mb-4">Automation</h3>
-                        <p class="font-body text-sm text-metallic-silver mb-6">Robotic arm components, conveyor system parts, and precision mechanical assemblies for automated manufacturing.</p>
+                        <p class="font-body text-sm text-metallic-silver mb-6">Robotic arm components, conveyor system
+                            parts, and precision mechanical assemblies for automated manufacturing.</p>
                         <div class="flex gap-2 flex-wrap">
-                            <span class="font-tech text-xs bg-white/5 px-3 py-1 rounded-full text-industrial-cyan">Robotics</span>
-                            <span class="font-tech text-xs bg-white/5 px-3 py-1 rounded-full text-industrial-cyan">Conveyor</span>
+                            <span
+                                class="font-tech text-xs bg-white/5 px-3 py-1 rounded-full text-industrial-cyan">Robotics</span>
+                            <span
+                                class="font-tech text-xs bg-white/5 px-3 py-1 rounded-full text-industrial-cyan">Conveyor</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Industry 7: Railways -->
-                <div class="industry-card flex-shrink-0 w-80 bg-dark-surface border border-white/10 p-8 rounded-2xl group hover:border-engineering-orange transition-colors duration-300 snap-center gsap-fade-up">
-                    <div class="absolute inset-0 bg-gradient-to-br from-engineering-orange/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                <div
+                    class="industry-card flex-shrink-0 w-80 bg-dark-surface border border-white/10 p-8 rounded-2xl group hover:border-engineering-orange transition-colors duration-300 snap-center gsap-fade-up">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-engineering-orange/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl">
+                    </div>
                     <div class="relative z-10">
-                        <i data-lucide="train" class="w-12 h-12 text-engineering-orange mb-6 group-hover:scale-110 transition-transform"></i>
+                        <i data-lucide="train"
+                            class="w-12 h-12 text-engineering-orange mb-6 group-hover:scale-110 transition-transform"></i>
                         <h3 class="font-heading text-2xl font-bold text-white mb-4">Railways</h3>
-                        <p class="font-body text-sm text-metallic-silver mb-6">Axle components, bogie parts, coupling mechanisms, and precision components for railway locomotives and coaches.</p>
+                        <p class="font-body text-sm text-metallic-silver mb-6">Axle components, bogie parts, coupling
+                            mechanisms, and precision components for railway locomotives and coaches.</p>
                         <div class="flex gap-2 flex-wrap">
-                            <span class="font-tech text-xs bg-white/5 px-3 py-1 rounded-full text-industrial-cyan">Axles</span>
-                            <span class="font-tech text-xs bg-white/5 px-3 py-1 rounded-full text-industrial-cyan">Bogies</span>
+                            <span
+                                class="font-tech text-xs bg-white/5 px-3 py-1 rounded-full text-industrial-cyan">Axles</span>
+                            <span
+                                class="font-tech text-xs bg-white/5 px-3 py-1 rounded-full text-industrial-cyan">Bogies</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Industry 8: Construction -->
-                <div class="industry-card flex-shrink-0 w-80 bg-dark-surface border border-white/10 p-8 rounded-2xl group hover:border-industrial-cyan transition-colors duration-300 snap-center gsap-fade-up delay-100">
-                    <div class="absolute inset-0 bg-gradient-to-br from-industrial-cyan/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                <div
+                    class="industry-card flex-shrink-0 w-80 bg-dark-surface border border-white/10 p-8 rounded-2xl group hover:border-industrial-cyan transition-colors duration-300 snap-center gsap-fade-up delay-100">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-industrial-cyan/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl">
+                    </div>
                     <div class="relative z-10">
-                        <i data-lucide="hammer" class="w-12 h-12 text-industrial-cyan mb-6 group-hover:scale-110 transition-transform"></i>
+                        <i data-lucide="hammer"
+                            class="w-12 h-12 text-industrial-cyan mb-6 group-hover:scale-110 transition-transform"></i>
                         <h3 class="font-heading text-2xl font-bold text-white mb-4">Construction</h3>
-                        <p class="font-body text-sm text-metallic-silver mb-6">Drill components, crane parts, fastening systems, and structural components for heavy construction equipment.</p>
+                        <p class="font-body text-sm text-metallic-silver mb-6">Drill components, crane parts, fastening
+                            systems, and structural components for heavy construction equipment.</p>
                         <div class="flex gap-2 flex-wrap">
-                            <span class="font-tech text-xs bg-white/5 px-3 py-1 rounded-full text-industrial-cyan">Drills</span>
-                            <span class="font-tech text-xs bg-white/5 px-3 py-1 rounded-full text-industrial-cyan">Cranes</span>
+                            <span
+                                class="font-tech text-xs bg-white/5 px-3 py-1 rounded-full text-industrial-cyan">Drills</span>
+                            <span
+                                class="font-tech text-xs bg-white/5 px-3 py-1 rounded-full text-industrial-cyan">Cranes</span>
                         </div>
                     </div>
                 </div>
@@ -915,26 +997,35 @@
                         <div class="flex items-start gap-6 group">
                             <div
                                 class="w-14 h-14 rounded-full bg-deep-navy border border-white/10 flex items-center justify-center group-hover:border-industrial-cyan transition-colors">
-                                <a href="https://maps.app.goo.gl/CJoZT7sYvJn1yYw16" target="_blank" rel="noopener noreferrer" class="w-full h-full flex items-center justify-center text-metallic-silver hover:text-industrial-cyan">
+                                <a href="https://maps.app.goo.gl/CJoZT7sYvJn1yYw16" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="w-full h-full flex items-center justify-center text-metallic-silver hover:text-industrial-cyan">
                                     <i data-lucide="map-pin" class="w-6 h-6 text-industrial-cyan"></i>
                                 </a>
                             </div>
                             <div>
                                 <h4 class="font-poppins font-bold text-white mb-2">Headquarters</h4>
-                                <p class="font-body text-metallic-silver"><a href="https://maps.app.goo.gl/CJoZT7sYvJn1yYw16" target="_blank" rel="noopener noreferrer" class="text-metallic-silver hover:text-industrial-cyan">7-18-180/4, Plot No. 64/A, Near M.G Work<br>Shop, Goutham Nagar, Secunderabad - 500011</a></p>
+                                <p class="font-body text-metallic-silver"><a
+                                        href="https://maps.app.goo.gl/CJoZT7sYvJn1yYw16" target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="text-metallic-silver hover:text-industrial-cyan">7-18-180/4, Plot No.
+                                        64/A, Near M.G Work<br>Shop, Goutham Nagar, Secunderabad - 500011</a></p>
                             </div>
                         </div>
 
                         <div class="flex items-start gap-6 group">
                             <div
                                 class="w-14 h-14 rounded-full bg-deep-navy border border-white/10 flex items-center justify-center group-hover:border-engineering-orange transition-colors">
-                                <a href="tel:+919949115239" class="w-full h-full flex items-center justify-center text-metallic-silver hover:text-engineering-orange">
+                                <a href="tel:+919949115239"
+                                    class="w-full h-full flex items-center justify-center text-metallic-silver hover:text-engineering-orange">
                                     <i data-lucide="phone" class="w-6 h-6 text-engineering-orange"></i>
                                 </a>
                             </div>
                             <div>
                                 <h4 class="font-poppins font-bold text-white mb-2">Phone</h4>
-                                <p class="font-body text-metallic-silver"><a href="tel:+919949115239" class="text-metallic-silver hover:text-engineering-orange">+91 9949115239</a></p>
+                                <p class="font-body text-metallic-silver"><a href="tel:+919949115239"
+                                        class="text-metallic-silver hover:text-engineering-orange">+91 9949115239</a>
+                                </p>
                             </div>
                         </div>
 
@@ -945,7 +1036,7 @@
                             </div>
                             <div>
                                 <h4 class="font-poppins font-bold text-white mb-2">Email</h4>
-                                 <a href="mailto:santoshworks2012@gmail.com" class="font-body text-metallic-silver hover:text-industrial-cyan transition-colors">santoshworks2012@gmail.com</a>
+                                <a href="mailto:santoshworks2012@gmail.com" class="font-body text-metallic-silver hover:text-industrial-cyan transition-colors">santoshworks2012@gmail.com</a>
                             </div>
                         </div>
                     </div>
@@ -953,7 +1044,8 @@
 
                 <!-- Contact Form -->
                 <div class="gsap-fade-left">
-                    <form id="quote-form" data-action="https://script.google.com/macros/s/AKfycbxHf94HepoknMuS_pm0AAj4rRAjrdb509DtfxQDAdq1DQbJ9Zgmt1GNuQAWNkGyt9Nn/exec"
+                    <form id="quote-form"
+                        data-action="https://script.google.com/macros/s/AKfycbxHf94HepoknMuS_pm0AAj4rRAjrdb509DtfxQDAdq1DQbJ9Zgmt1GNuQAWNkGyt9Nn/exec"
                         class="bg-deep-navy/80 backdrop-blur-xl border border-white/10 p-10 rounded-2xl shadow-2xl relative">
                         <div
                             class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-2xl pointer-events-none">
@@ -1032,9 +1124,12 @@
                         highest standards of quality.
                     </p>
                     <div class="flex items-start gap-3 mb-8">
-                        <a href="https://maps.app.goo.gl/CJoZT7sYvJn1yYw16" target="_blank" rel="noopener noreferrer" class="flex items-start gap-3 mb-8 text-metallic-silver hover:text-industrial-cyan">
+                        <a href="https://maps.app.goo.gl/CJoZT7sYvJn1yYw16"
+                            target="_blank" rel="noopener noreferrer"
+                            class="flex items-start gap-3 mb-8 text-metallic-silver hover:text-industrial-cyan">
                             <i data-lucide="map-pin" class="w-5 h-5 text-industrial-cyan flex-shrink-0 mt-0.5"></i>
-                            <span class="font-body text-sm text-metallic-silver max-w-sm">7-18-180/4, Plot No. 64/A, Near M.G Work Shop,<br>Goutham Nagar, Secunderabad - 500011</span>
+                            <span class="font-body text-sm text-metallic-silver max-w-sm">7-18-180/4, Plot No. 64/A,
+                                Near M.G Work Shop,<br>Goutham Nagar, Secunderabad - 500011</span>
                         </a>
                     </div>
                     <div class="flex gap-4">
@@ -1068,7 +1163,7 @@
                 </div>
 
                 <div>
-                    
+
                     <h4 class="font-poppins font-bold text-white mb-6">Legal</h4>
                     <ul class="space-y-4">
                         <li><a href="#"
