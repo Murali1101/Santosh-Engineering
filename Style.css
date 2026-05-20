@@ -7,7 +7,8 @@
 
 /* Dynamic header-aware hero sizing: ensure hero doesn't get hidden behind fixed header */
 :root {
-    --header-h: 72px; /* fallback value */
+    --header-h: 72px;
+    /* fallback value */
 }
 
 /* Push page content down by header height so fixed header doesn't cover it */
@@ -18,7 +19,23 @@ body {
 section#hero {
     /* Use --vh to avoid mobile browser chrome issues (address bar) */
     min-height: calc(var(--vh, 1vh) * 100 - var(--header-h)) !important;
+    min-height: calc(100vh - var(--header-h)) !important;
+    height: auto !important;
+    overflow: visible !important;
     padding-top: calc(var(--header-h) + 0.5rem) !important;
+}
+
+@media (max-width: 768px) {
+    section#hero {
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        min-height: calc(100vh - var(--header-h)) !important;
+        min-height: calc(var(--vh, 1vh) * 100 - var(--header-h)) !important;
+        height: auto !important;
+        padding-top: calc(var(--header-h) + 1rem) !important;
+        padding-bottom: 2rem !important;
+    }
 }
 
 /* Mobile menu positioning and safe max-height */
@@ -27,15 +44,6 @@ section#hero {
     overflow: auto;
     max-height: calc(var(--vh, 1vh) * 100 - var(--header-h));
 }
-
-/* Small screen adjustments: ensure hero content starts below header and doesn't center vertically */
-@media (max-width: 768px) {
-    section#hero {
-        align-items: flex-start !important;
-        padding-top: calc(var(--header-h) + 1rem) !important;
-        min-height: calc(var(--vh, 1vh) * 100 - var(--header-h)) !important;
-    }
-} 
 
 /* Ensure counters don't wrap their trailing symbols on small screens */
 .counter {
@@ -133,7 +141,6 @@ textarea:not(:placeholder-shown)+label {
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
     display: block;
-    scroll-snap-type: x mandatory;
     touch-action: pan-x;
     scroll-padding-inline: 1rem;
     padding: 0 1.5rem;
@@ -168,29 +175,18 @@ textarea:not(:placeholder-shown)+label {
     display: inline-flex;
 }
 
-.industries-scroll-wrapper > div {
+.industries-scroll-wrapper>div {
     display: flex;
     flex-direction: row;
     width: fit-content;
 }
 
 .industry-card {
-    scroll-snap-align: center;
+    position: relative;
+    flex-shrink: 0;
     width: min(90vw, 20rem);
     min-width: min(90vw, 20rem);
     max-width: 20rem;
-}
-
-@media (max-width: 767px) {
-    .industry-card {
-        scroll-snap-align: start;
-    }
-}
-
-.industry-card {
-    position: relative;
-    flex-shrink: 0;
-    min-width: min(90vw, 20rem);
 }
 
 .no-scrollbar {
