@@ -6,6 +6,8 @@ window.addEventListener('DOMContentLoaded', () => {
     } else {
         console.warn('Lucide library not loaded');
     }
+    // ensure initial scroll position is at top to avoid partial view on some mobile browsers
+    try { window.scrollTo(0, 0); } catch (e) { }
 
     if (typeof gsap === 'undefined') {
         console.error('GSAP library failed to load. Check CDN link.');
@@ -26,11 +28,11 @@ window.addEventListener('DOMContentLoaded', () => {
         let lastX = 0;
         let lastY = 0;
         let ticking = false;
-        
+
         document.addEventListener('mousemove', (e) => {
             lastX = e.clientX;
             lastY = e.clientY;
-            
+
             if (!ticking) {
                 requestAnimationFrame(() => {
                     gsap.to(cursorGlow, {
@@ -87,9 +89,27 @@ window.addEventListener('DOMContentLoaded', () => {
     let lastScrollY = 0;
     let ticking2 = false;
 
+    // Keep CSS var in sync with header height so hero can avoid overlap
+    const setHeaderHeightVar = () => {
+        if (!header) return;
+        const h = header.offsetHeight;
+        document.documentElement.style.setProperty('--header-h', h + 'px');
+        // also ensure mobile menu sits below header
+        const mobileMenuEl = document.getElementById('mobile-menu');
+        if (mobileMenuEl) {
+            mobileMenuEl.style.top = h + 'px';
+        }
+    };
+
+    // Set mobile-safe viewport unit to avoid 100vh issues on mobile browsers
+    const setVhVar = () => {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    };
+
     const updateHeaderScroll = () => {
         const isScrolled = lastScrollY > 50;
-        
+
         if (isScrolled) {
             header.classList.remove('py-6');
             header.classList.add('py-2');
@@ -102,16 +122,27 @@ window.addEventListener('DOMContentLoaded', () => {
             navContainer.classList.add('border-transparent');
         }
         ticking2 = false;
+        // update header height CSS var after classes changed
+        setHeaderHeightVar();
     };
 
     window.addEventListener('scroll', () => {
         lastScrollY = window.scrollY;
-        
+
         if (!ticking2) {
             requestAnimationFrame(updateHeaderScroll);
             ticking2 = true;
         }
     });
+
+    // ensure header height var is accurate initially and on resize
+    setHeaderHeightVar();
+    setVhVar();
+    window.addEventListener('resize', () => {
+        // debounce small resizes using rAF
+        requestAnimationFrame(() => { setHeaderHeightVar(); setVhVar(); });
+    });
+    window.addEventListener('orientationchange', () => { requestAnimationFrame(setVhVar); });
 
     // --- MOBILE MENU TOGGLE ---
     const mobileToggle = document.getElementById('mobile-menu-toggle');
@@ -124,8 +155,13 @@ window.addEventListener('DOMContentLoaded', () => {
             if (!expanded) {
                 // open
                 mobileMenu.style.display = 'block';
+                // ensure menu appears below header and fit within viewport
+                setHeaderHeightVar();
+                setVhVar();
+                // enforce safe maxHeight so it doesn't overflow the viewport
+                mobileMenu.style.maxHeight = `calc(var(--vh, 1vh) * 100 - ${header.offsetHeight}px)`;
                 gsap.killTweensOf(mobileMenu);
-                gsap.fromTo(mobileMenu, { maxHeight: 0, opacity: 0 }, { maxHeight: mobileMenu.scrollHeight, opacity: 1, duration: 0.35, ease: 'power2.out' });
+                gsap.fromTo(mobileMenu, { maxHeight: 0, opacity: 0 }, { maxHeight: mobileMenu.scrollHeight || mobileMenu.style.maxHeight, opacity: 1, duration: 0.35, ease: 'power2.out' });
                 const icon = mobileToggle.querySelector('i');
                 if (icon) { icon.setAttribute('data-lucide', 'x'); lucide.createIcons(); }
             } else {
@@ -199,6 +235,33 @@ window.addEventListener('DOMContentLoaded', () => {
             });
 
             setInterval(updateScroll, 20);
+
+            const industriesPrevBtn = document.querySelector('.industries-scroll-prev');
+            const industriesNextBtn = document.querySelector('.industries-scroll-next');
+            const firstIndustryCard = industriesContainer.querySelector('.industry-card');
+            const industryGap = parseFloat(getComputedStyle(industriesContainer).columnGap) || 0;
+            const industryScrollAmount = firstIndustryCard ? Math.round((firstIndustryCard.offsetWidth + industryGap) * 2) : Math.max(industriesScrollWrapper.offsetWidth * 0.8, 420);
+
+            const pauseAutoScroll = () => {
+                autoScrollActive = false;
+                window.setTimeout(() => { autoScrollActive = true; }, 600);
+            };
+
+            if (industriesPrevBtn) {
+                industriesPrevBtn.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    pauseAutoScroll();
+                    industriesScrollWrapper.scrollBy({ left: -industryScrollAmount, behavior: 'smooth' });
+                });
+            }
+
+            if (industriesNextBtn) {
+                industriesNextBtn.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    pauseAutoScroll();
+                    industriesScrollWrapper.scrollBy({ left: industryScrollAmount, behavior: 'smooth' });
+                });
+            }
         }
     }
 
@@ -240,20 +303,20 @@ window.addEventListener('DOMContentLoaded', () => {
     // 3. Fade Up / Fade Left / Fade Right (optimized)
     // Use a more efficient intersection observer for better performance
     const revealElements = document.querySelectorAll('.gsap-fade-up, .gsap-fade-left, .gsap-fade-right');
-    
+
     if (revealElements.length > 0) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     const el = entry.target;
                     let fromVars = { y: 50, opacity: 0 };
-                    
+
                     if (el.classList.contains('gsap-fade-left')) {
                         fromVars = { x: 50, opacity: 0 };
                     } else if (el.classList.contains('gsap-fade-right')) {
                         fromVars = { x: -50, opacity: 0 };
                     }
-                    
+
                     gsap.fromTo(el, fromVars, {
                         y: 0,
                         x: 0,
@@ -261,12 +324,12 @@ window.addEventListener('DOMContentLoaded', () => {
                         duration: 0.8,
                         ease: "power2.out"
                     });
-                    
+
                     observer.unobserve(el);
                 }
             });
         }, { threshold: 0.1 });
-        
+
         revealElements.forEach((el) => observer.observe(el));
     }
 
@@ -312,7 +375,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     duration: 1.5,
                     ease: "power2.out"
                 });
-                
+
                 // Animate steps with stagger
                 const steps = document.querySelectorAll('.process-step > div');
                 steps.forEach((step, index) => {
@@ -337,7 +400,7 @@ window.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
 
             const actionUrl = quoteForm.getAttribute('data-action');
-            if (!actionUrl ) {
+            if (!actionUrl) {
                 alert('Please configure the Google Sheets web app URL in the quote form data-action attribute.');
                 return;
             }
