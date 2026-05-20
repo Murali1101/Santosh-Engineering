@@ -335,11 +335,11 @@ window.addEventListener('DOMContentLoaded', () => {
                 y: 0,
                 x: 0,
                 opacity: 1,
-                duration: 0.8,
+                duration: 0.5,
                 ease: "power2.out",
                 scrollTrigger: {
                     trigger: el,
-                    start: "top 80%", // Triggers more towards the middle of the screen
+                    start: "top 95%", // Triggers as soon as it enters the bottom of the screen
                     toggleActions: "play none none reverse"
                 }
             });
@@ -350,7 +350,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const counters = document.querySelectorAll('.counter');
     counters.forEach((counter) => {
         const target = parseInt(counter.getAttribute('data-target'));
-        const counterStart = window.innerWidth < 768 ? "top 85%" : "top 80%";
+        const counterStart = window.innerWidth < 768 ? "top 95%" : "top 95%";
         let animFrame;
 
         ScrollTrigger.create({
@@ -359,7 +359,7 @@ window.addEventListener('DOMContentLoaded', () => {
             toggleActions: "play none none reverse",
             onEnter: () => {
                 let current = 0;
-                const duration = 2500; // ms (slower and uniform)
+                const duration = 1500; // ms (faster but uniform)
                 const increment = target / (duration / 16); // 60fps
 
                 const updateCounter = () => {
@@ -472,3 +472,4 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
