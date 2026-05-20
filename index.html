@@ -741,7 +741,7 @@
         <!-- Horizontal Scroll Container -->
         <div class="industries-carousel relative">
             <div class="industries-scroll-wrapper overflow-x-auto overflow-y-hidden">
-                <div class="px-6 flex gap-6 snap-x snap-mandatory">
+                <div class="px-6 flex gap-6">
                     <!-- Industry 1: Automotive -->
                     <div
                         class="industry-card flex-shrink-0 w-80 bg-dark-surface border border-white/10 p-8 rounded-2xl group hover:border-engineering-orange transition-colors duration-300 snap-center gsap-fade-up">
@@ -767,7 +767,7 @@
 
                     <!-- Industry 2: Aerospace -->
                     <div
-                        class="industry-card flex-shrink-0 w-80 bg-dark-surface border border-white/10 p-8 rounded-2xl group hover:border-industrial-cyan transition-colors duration-300 snap-center gsap-fade-up delay-100">
+                        class="industry-card flex-shrink-0 w-80 bg-dark-surface border border-white/10 p-8 rounded-2xl group hover:border-industrial-cyan transition-colors duration-300 gsap-fade-up delay-100">
                         <div
                             class="absolute inset-0 bg-gradient-to-br from-industrial-cyan/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl">
                         </div>
@@ -791,7 +791,7 @@
 
                     <!-- Industry 3: Heavy Machinery -->
                     <div
-                        class="industry-card flex-shrink-0 w-80 bg-dark-surface border border-white/10 p-8 rounded-2xl group hover:border-engineering-orange transition-colors duration-300 snap-center gsap-fade-up">
+                        class="industry-card flex-shrink-0 w-80 bg-dark-surface border border-white/10 p-8 rounded-2xl group hover:border-engineering-orange transition-colors duration-300 gsap-fade-up">
                         <div
                             class="absolute inset-0 bg-gradient-to-br from-engineering-orange/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl">
                         </div>
@@ -812,7 +812,7 @@
 
                     <!-- Industry 4: Electrical -->
                     <div
-                        class="industry-card flex-shrink-0 w-80 bg-dark-surface border border-white/10 p-8 rounded-2xl group hover:border-industrial-cyan transition-colors duration-300 snap-center gsap-fade-up delay-100">
+                        class="industry-card flex-shrink-0 w-80 bg-dark-surface border border-white/10 p-8 rounded-2xl group hover:border-industrial-cyan transition-colors duration-300 gsap-fade-up delay-100">
                         <div
                             class="absolute inset-0 bg-gradient-to-br from-industrial-cyan/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl">
                         </div>
@@ -834,7 +834,7 @@
 
                     <!-- Industry 5: Hydraulics -->
                     <div
-                        class="industry-card flex-shrink-0 w-80 bg-dark-surface border border-white/10 p-8 rounded-2xl group hover:border-engineering-orange transition-colors duration-300 snap-center gsap-fade-up">
+                        class="industry-card flex-shrink-0 w-80 bg-dark-surface border border-white/10 p-8 rounded-2xl group hover:border-engineering-orange transition-colors duration-300 gsap-fade-up">
                         <div
                             class="absolute inset-0 bg-gradient-to-br from-engineering-orange/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl">
                         </div>
@@ -855,7 +855,7 @@
 
                     <!-- Industry 6: Automation -->
                     <div
-                        class="industry-card flex-shrink-0 w-80 bg-dark-surface border border-white/10 p-8 rounded-2xl group hover:border-industrial-cyan transition-colors duration-300 snap-center gsap-fade-up delay-100">
+                        class="industry-card flex-shrink-0 w-80 bg-dark-surface border border-white/10 p-8 rounded-2xl group hover:border-industrial-cyan transition-colors duration-300 gsap-fade-up delay-100">
                         <div
                             class="absolute inset-0 bg-gradient-to-br from-industrial-cyan/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl">
                         </div>
@@ -877,7 +877,7 @@
 
                     <!-- Industry 7: Railways -->
                     <div
-                        class="industry-card flex-shrink-0 w-80 bg-dark-surface border border-white/10 p-8 rounded-2xl group hover:border-engineering-orange transition-colors duration-300 snap-center gsap-fade-up">
+                        class="industry-card flex-shrink-0 w-80 bg-dark-surface border border-white/10 p-8 rounded-2xl group hover:border-engineering-orange transition-colors duration-300 gsap-fade-up">
                         <div
                             class="absolute inset-0 bg-gradient-to-br from-engineering-orange/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl">
                         </div>
@@ -899,7 +899,7 @@
 
                     <!-- Industry 8: Construction -->
                     <div
-                        class="industry-card flex-shrink-0 w-80 bg-dark-surface border border-white/10 p-8 rounded-2xl group hover:border-industrial-cyan transition-colors duration-300 snap-center gsap-fade-up delay-100">
+                        class="industry-card flex-shrink-0 w-80 bg-dark-surface border border-white/10 p-8 rounded-2xl group hover:border-industrial-cyan transition-colors duration-300 gsap-fade-up delay-100">
                         <div
                             class="absolute inset-0 bg-gradient-to-br from-industrial-cyan/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl">
                         </div>
@@ -921,11 +921,11 @@
                 </div>
             </div>
             <button type="button"
-                class="industries-scroll-btn industries-scroll-prev hidden md:flex items-center justify-center rounded-full border border-white/10 bg-dark-surface/90 text-white shadow-xl transition hover:bg-engineering-orange hover:border-engineering-orange focus:outline-none focus:ring-2 focus:ring-engineering-orange">
+                class="industries-scroll-btn industries-scroll-prev flex items-center justify-center rounded-full border border-white/10 bg-dark-surface/90 text-white shadow-xl transition hover:bg-engineering-orange hover:border-engineering-orange focus:outline-none focus:ring-2 focus:ring-engineering-orange">
                 <i data-lucide="chevron-left" class="w-5 h-5"></i>
             </button>
             <button type="button"
-                class="industries-scroll-btn industries-scroll-next hidden md:flex items-center justify-center rounded-full border border-white/10 bg-dark-surface/90 text-white shadow-xl transition hover:bg-engineering-orange hover:border-engineering-orange focus:outline-none focus:ring-2 focus:ring-engineering-orange">
+                class="industries-scroll-btn industries-scroll-next flex items-center justify-center rounded-full border border-white/10 bg-dark-surface/90 text-white shadow-xl transition hover:bg-engineering-orange hover:border-engineering-orange focus:outline-none focus:ring-2 focus:ring-engineering-orange">
                 <i data-lucide="chevron-right" class="w-5 h-5"></i>
             </button>
         </div>
