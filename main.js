@@ -182,6 +182,17 @@ window.addEventListener('DOMContentLoaded', () => {
                 if (icon) { icon.setAttribute('data-lucide', 'menu'); lucide.createIcons(); }
             });
         });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const expanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+            if (expanded && !mobileMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
+                mobileToggle.setAttribute('aria-expanded', 'false');
+                gsap.to(mobileMenu, { maxHeight: 0, opacity: 0, duration: 0.25, ease: 'power2.in', onComplete: () => { mobileMenu.style.display = ''; } });
+                const icon = mobileToggle.querySelector('i');
+                if (icon) { icon.setAttribute('data-lucide', 'menu'); lucide.createIcons(); }
+            }
+        });
     }
 
     // --- INDUSTRIES AUTO SCROLL ---
@@ -268,7 +279,13 @@ window.addEventListener('DOMContentLoaded', () => {
     // --- ANIMATIONS ---
 
     // 1. Hero Entrance Animations
-    const tlHero = gsap.timeline();
+    const tlHero = gsap.timeline({
+        scrollTrigger: {
+            trigger: '#hero',
+            start: "top 80%",
+            toggleActions: "play none none reverse"
+        }
+    });
 
     tlHero.from('.gsap-hero-el', {
         y: 50,
@@ -301,64 +318,65 @@ window.addEventListener('DOMContentLoaded', () => {
     // });
 
     // 3. Fade Up / Fade Left / Fade Right (optimized)
-    // Use a more efficient intersection observer for better performance
+    // Replaced IntersectionObserver with ScrollTrigger to allow reversing animations when scrolling up
     const revealElements = document.querySelectorAll('.gsap-fade-up, .gsap-fade-left, .gsap-fade-right');
 
     if (revealElements.length > 0) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    const el = entry.target;
-                    let fromVars = { y: 50, opacity: 0 };
+        revealElements.forEach((el) => {
+            let fromVars = { y: 50, opacity: 0 };
 
-                    if (el.classList.contains('gsap-fade-left')) {
-                        fromVars = { x: 50, opacity: 0 };
-                    } else if (el.classList.contains('gsap-fade-right')) {
-                        fromVars = { x: -50, opacity: 0 };
-                    }
+            if (el.classList.contains('gsap-fade-left')) {
+                fromVars = { x: 50, opacity: 0 };
+            } else if (el.classList.contains('gsap-fade-right')) {
+                fromVars = { x: -50, opacity: 0 };
+            }
 
-                    gsap.fromTo(el, fromVars, {
-                        y: 0,
-                        x: 0,
-                        opacity: 1,
-                        duration: 0.8,
-                        ease: "power2.out"
-                    });
-
-                    observer.unobserve(el);
+            gsap.fromTo(el, fromVars, {
+                y: 0,
+                x: 0,
+                opacity: 1,
+                duration: 0.8,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top 80%", // Triggers more towards the middle of the screen
+                    toggleActions: "play none none reverse"
                 }
             });
-        }, { threshold: 0.1 });
-
-        revealElements.forEach((el) => observer.observe(el));
+        });
     }
 
     // 4. Counter Animation
     const counters = document.querySelectorAll('.counter');
     counters.forEach((counter) => {
         const target = parseInt(counter.getAttribute('data-target'));
-        const counterStart = window.innerWidth < 768 ? "top 95%" : "top 90%";
+        const counterStart = window.innerWidth < 768 ? "top 85%" : "top 80%";
+        let animFrame;
 
         ScrollTrigger.create({
             trigger: counter,
             start: counterStart,
+            toggleActions: "play none none reverse",
             onEnter: () => {
                 let current = 0;
-                const duration = 1200; // ms
+                const duration = 2500; // ms (slower and uniform)
                 const increment = target / (duration / 16); // 60fps
 
                 const updateCounter = () => {
                     current += increment;
                     if (current < target) {
-                        counter.innerText = Math.ceil(current) + "+";
-                        requestAnimationFrame(updateCounter);
+                        counter.innerText = Math.floor(current) + (target === 100 ? "%" : "+");
+                        animFrame = requestAnimationFrame(updateCounter);
                     } else {
                         counter.innerText = target + (target === 100 ? "%" : "+");
                     }
                 };
                 updateCounter();
             },
-            once: true
+            onLeaveBack: () => {
+                cancelAnimationFrame(animFrame);
+                counter.innerText = "0";
+            }
         });
     });
 
@@ -389,7 +407,17 @@ window.addEventListener('DOMContentLoaded', () => {
                     });
                 });
             },
-            once: true
+            onLeaveBack: () => {
+                gsap.to('.process-progress', { width: "0%", duration: 0.5 });
+                const steps = document.querySelectorAll('.process-step > div');
+                gsap.to(steps, {
+                    backgroundColor: "transparent",
+                    borderColor: "rgba(255, 255, 255, 0.2)",
+                    color: "#ffffff",
+                    duration: 0.5,
+                    delay: 0
+                });
+            }
         });
     }
 
